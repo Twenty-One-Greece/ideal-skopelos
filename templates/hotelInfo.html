@@ -1,0 +1,71 @@
+<div class="rq-page-content">
+<ul rn-carousel class="image" rn-carousel-auto-slide="3" rn-carousel-duration="1000" rn-carousel-easing="easeFromTo">
+  <li ng-repeat="image in moreInfo.photos">
+    <div class="layer">
+      <img src="http://128.199.34.214/uploads/rooms/{{image.image}}">
+    </div>
+  </li>
+</ul>
+
+<div class="container">
+  <div class="row">
+
+    <!--name and address-->
+    <div class="col-md-12">
+      <div class="rq-listing-information">
+        <div class="container">
+          <div class="check">
+            <div class="rq-listing-detail-title-bar">
+              <h2>{{moreInfo.name}}</h2>
+              <h4>{{moreInfo.location.address}}</h4>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div><!-- name and address end -->
+
+
+    <div class="col-md-7"><!-- About and Amenities -->
+      <div class="rq-listing-about"><!--About Hotel-->
+        <h2 class="single-sub-title">About Hotel</h2>
+        <p>{{moreInfo.description}}</p>
+      </div><!-- listing detail about company end-->
+
+      <h2 class="single-sub-title">General amenities</h2><!--Amenities-->
+      <div class="row">
+        <ul class="nav rq-amanities-lists">
+          <li class="col-md-4" ng-repeat="service in moreInfo.services"><i class="ion-checkmark-circled rq-has-icon"></i> {{service.name}}</li>
+        </ul>
+      </div><!-- listing detail amenities end -->
+    </div><!-- about and amenities end -->
+
+
+    <!--Book form-->
+    <div class="col-md-4 col-md-offset-1" ng-if="start_date && end_date">
+      <div class="rq-listing-about">
+        <h2 class="single-sub-title">
+         <small>From {{start_date}} to {{end_date}}</small>
+        </h2>
+        <a href="#!/book-now/{{hotelID}}/{{roomTypeID}}" class="rq-btn rq-btn-primary rounded small-padding">Book Now</a>
+      </div>
+    </div>
+    <!--Book form end-->
+
+  </div><!--Row-->
+  
+
+  <div class="row">
+    <div class="rq-listing-about"><!--About Hotel-->
+        <h2 class="single-sub-title">Position</h2>
+        
+    <ng-map zoom="8" center={{coordinates}}>
+    <marker position={{coordinates}} />
+    <shape name="circle" radius="400" center={{coordinates}} radius="4000" />
+    <control name="overviewMap" opened="true" />
+    </ng-map>
+    </div><!-- listing detail about company end-->
+  </div><!--Row-->
+
+</div>
+<!--Container-->
+</div>

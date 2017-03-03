@@ -1,0 +1,139 @@
+<header ng-controller="myCtrl" class="header home-header" style="background: url('./assets/dist/img/hotel/company-banner.jpg') top center no-repeat; background-size: cover;">
+<div class="header-body">
+    <div class="container">
+    <h1 class="wow fadeInUp">Exceed your Expectations</h1>
+    <div class="rq-search-wrapper">
+        <div class="rq-search-toggle">
+        <button class=" rq-btn rq-btn-primary rounded"><b class="ion-android-search"></b></button>
+        </div>
+        <div class="rq-search-container">
+
+        <div class="rq-search-single">
+            <div class="rq-search-content">
+            <span class="rq-search-heading">Location</span>
+            Skopelos
+            <!--<select name="categories" class="category-option">
+                <option value="0">Pick a location</option>
+                <option value="AL">Alabama</option>
+                <option value="AK">Alaska</option>
+                <option value="AZ">Arizona</option>
+            </select>-->
+            </div>
+        </div>
+        <div class="rq-search-single">
+            <div class="rq-search-content">
+            <span class="rq-search-heading">Check In</span>
+            <datepicker date-format="yyyy-MM-dd" date-min-limit=="{{today}}">
+                <input ng-model="search.start_date" class="rq-form-element datepicker" id="startdate" placeholder="Pick up date" type="text"/>
+            </datepicker>
+            <i class="ion-chevron-down datepicker-arrow"></i>
+            </div>
+        </div>
+        <div class="rq-search-single">
+            <div class="rq-search-content">
+            <span class="rq-search-heading">Check Out</span>
+            <datepicker date-format="yyyy-MM-dd" date-min-limit=="{{today}}">
+                <input ng-model="search.end_date" class="rq-form-element datepicker" id="enddate" placeholder="Return date" type="text"/>
+            </datepicker>
+            <i class="ion-chevron-down datepicker-arrow"></i>
+            </div>
+        </div>
+        <div class="rq-search-single rq-guest-content">
+            <div class="rq-search-content last-child">
+            <span class="rq-search-heading">Guest</span>
+            <select name="categories" class="category-option">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+            </div>
+        </div>
+        <div class="rq-search-single search-btn">
+            <div class="rq-search-content">
+            <button ng-click="getSerachResults()" class="rq-btn rq-btn-primary fluid-btn">Search <i class="arrow_right"></i></button>
+            </div>
+        </div>
+        </div> <!-- / .search-container -->
+    </div>
+    </div>
+</div> <!-- /.header-body -->
+</header> <!-- end header -->
+
+
+
+<div class="row">
+<br>
+<h3 class="rq-heading">Rent a fine lodge in Skopelos</h3>
+<div class="col-md-3">
+    <div class="how-it-work-single wow fadeIn" data-wow-delay=".1s" style="visibility: visible; animation-delay: 0.1s; animation-name: fadeIn;">
+    <img src="./assets/dist/img/hotel/price.png" alt="">
+    <h4>Best Price Guarantee</h4>
+    <p>Book with us and get the lowest price.</p>
+    </div>
+</div>
+<div class="col-md-3">
+    <div class="how-it-work-single wow fadeIn" data-wow-delay=".2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeIn;">
+    <img src="./assets/dist/img/hotel/welcome.png" alt="">
+    <h4>Welcome Arrangement</h4>
+    <p>Feel welcome arriving in Skopelos island and while we lead you at your place.</p>
+    </div>
+</div>
+<div class="col-md-3">
+    <div class="how-it-work-single wow fadeIn" data-wow-delay=".3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeIn;">
+    <img src="./assets/dist/img/hotel/car.png" alt="">
+    <h4>Car Rental</h4>
+    <p>We organize it for you ensuring 24h assistance.</p>
+    </div>
+</div>
+<div class="col-md-3">
+    <div class="how-it-work-single wow fadeIn" data-wow-delay=".3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeIn;">
+    <img src="./assets/dist/img/hotel/info.png" alt="">
+    <h4>Information & Support</h4>
+    <p>Just make us a request.</p>
+    </div>
+</div>
+<div class="clearfix"></div>
+<div class="col-md-4">
+    <div class="how-it-work-single wow fadeIn" data-wow-delay=".2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeIn;">
+    <h4>Unique Experience</h4>
+    <p>10 times better than booking through a travel agent.</p>
+    </div>
+</div>
+<div class="col-md-4">
+    <div class="how-it-work-single wow fadeIn" data-wow-delay=".3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeIn;">
+    <h4>Memorable</h4>
+    <p>A travel experience in Skopelos that you will never forget.</p>
+    </div>
+</div>
+<div class="col-md-4">
+    <div class="how-it-work-single wow fadeIn" data-wow-delay=".3s" style="visibility: visible; animation-delay: 0.3s; animation-name: fadeIn;">    <h4>Information & Support</h4>
+    <h4>Low Prices</h4>
+    <p>Stay in Skopelos is affordable.</p>
+    </div>
+</div>
+</div>
+
+
+
+<div class="row">
+    <h3 class="rq-heading">Make Your Vacation Worthwhile</h3>
+    <p class="rq-heading">Find and book your ideal accommodation without extra fees.</p>
+    <div class="col-md-4 col-md-offset-2">
+    <img src="./assets/dist/img/hotel/cottages.jpg" alt="">
+    </div>
+
+    <div class="col-md-3">
+    <img src="./assets/dist/img/hotel/apartments.jpg" alt="">
+    </div>
+    <div class="clearfix"></div>
+    <br><br>
+    <p class="rq-heading col-md-7 col-md-offset-2">We are here to help you get more out of your vacations in Skopelos. Discover the hidden accommodation gems: traditional cottages, private villas, excellent hotels and affordable apartments. Explore the beautiful nature of the island through the most exciting activities and take advantage of the special rates we offer. Valuable information about attractions, entertainment and dining are also available for you to ensure a unique summer experience.</p>
+</div>
+
+
+<div class="row">
+    <p></p>
+    <img src="./assets/dist/img/hotel/skopelos.jpg" alt="" />
+</div>

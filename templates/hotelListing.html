@@ -1,0 +1,108 @@
+<div ng-if="loading" id="rq-page-loading"><div class="rq-loading-icon"><i class="ion-load-c"></i></div></div>
+
+<div class="rq-search-wrapper second-search">
+    <div class="rq-search-toggle">
+    <button class=" rq-btn rq-btn-primary rounded"><b class="ion-android-search"></b></button>
+    </div>
+    <div class="rq-search-container cont2">
+
+    <div class="rq-search-single">
+        <div class="rq-search-content">
+        <span class="rq-search-heading">Location</span>
+        Skopelos
+        <!--<select name="categories" class="category-option">
+            <option value="0">Pick a location</option>
+            <option value="AL">Alabama</option>
+            <option value="AK">Alaska</option>
+            <option value="AZ">Arizona</option>
+        </select>-->
+        </div>
+    </div>
+    <div class="rq-search-single">
+        <div class="rq-search-content">
+        <span class="rq-search-heading">Check In</span>
+        <datepicker date-format="yyyy-MM-dd" date-min-limit=="{{today}}">
+            <input ng-model="search.start_date" class="rq-form-element datepicker" id="startdate" placeholder="Pick up date" type="text"/>
+        </datepicker>
+        <i class="ion-chevron-down datepicker-arrow"></i>
+        </div>
+    </div>
+    <div class="rq-search-single">
+        <div class="rq-search-content">
+        <span class="rq-search-heading">Check Out</span>
+        <datepicker date-format="yyyy-MM-dd" date-min-limit=="{{today}}">
+            <input ng-model="search.end_date" class="rq-form-element datepicker" id="enddate" placeholder="Return date" type="text"/>
+        </datepicker>
+        <i class="ion-chevron-down datepicker-arrow"></i>
+        </div>
+    </div>
+    <div class="rq-search-single rq-guest-content">
+        <div class="rq-search-content last-child">
+        <span class="rq-search-heading">Guest</span>
+        <select name="categories" class="category-option">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+        </select>
+        </div>
+    </div>
+    <div class="rq-search-single search-btn">
+        <div class="rq-search-content">
+        <button ng-click="getSerachResults()" class="rq-btn rq-btn-primary fluid-btn">Search <i class="arrow_right"></i></button>
+        </div>
+    </div>
+    </div> <!-- / .search-container -->
+</div>
+
+
+
+
+<div class="">
+
+  <div class="row no-results" ng-if="!hotels">
+    <h3>No hotels found. Please try again</h3>
+  </div>
+
+
+  <div class="row">
+
+    <!--Google map-->
+    <div class="col-md-6" ng-if="hotels">
+      <ui-gmap-google-map center='map.center' zoom='map.zoom'>
+          <ui-gmap-marker ng-repeat="hotel in hotels" coords="hotel.location" icon="m.icon" idkey="hotel.id"></ui-gmap-marker>
+      </ui-gmap-google-map>
+    </div><!--1/2-->
+
+    <!--Hotels-->
+    <div class="col-md-6 scrollable" ng-if="hotels">
+      <div class="rq-listing-plain-heading-toolbar">
+        <div class="row">
+          <div class="col-sm-4">
+            <div class="rq-listing-search-results">
+              <p>{{hotels.length}} Result Listing</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Start listing hotels portion -->
+      <div class="row">
+      <div class="rq-listing-items col-md-6" ng-repeat="hotel in hotels">
+        <div class="rq-listing-item" ng-click="hotelSelect(hotel.id, hotel.rooms[0].id, hotel.rooms[0].mealPlans[0].price)">
+          <h4 class="rq-listing-item-title">
+            <a ng-href="#!/hotel-info/{{hotel.id}}/{{hotel.rooms[0].id}}">{{hotel.name}}</a>
+            <div class="rq-lisitng-item-col-loc"><i class="ion-android-pin"></i>{{hotel.location.address}}</div>
+          </h4>
+          <img class="search-image" src="http://128.199.34.214/uploads/properties/{{hotel.photo}}" alt="">
+          <h3 class="rq-price-tag"><span class="new-price">{{hotel.rooms[0].mealPlans[0].price}}</span><span>€</span></h3>
+        </div>
+      </div>
+      </div>
+
+      
+
+    </div> <!--1/2-->
+  </div><!-- Row -->
+</div>
